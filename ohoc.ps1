@@ -27,6 +27,7 @@ Read-Host -Prompt "<enter to continue>"
 $container = docker ps -a -q -f name=ohoc
 if($container.Length -GE 1){
     echo "Container already exists.... restarting"
+    docker container stop ohoc
     docker container start ohoc
     docker exec -it ohoc /bin/bash -c "cd /home/ohol/OneLife/server/ && echo 'type ./OneLifeServer to start server'; exec bash"}
 else{
