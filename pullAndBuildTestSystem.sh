@@ -1,19 +1,21 @@
 #!/bin/sh
 #this shell script is from https://github.com/jasonrohrer/OneLife/blob/master/scripts/pullAndBuildTestSystem.sh. I did not write it! I just fixed the symlink for version 409.
 
+apt-get -y update && apt-get -y upgrade && apt-get -y install git g++ imagemagick xclip libsdl1.2-dev libglu1-mesa-dev libgl1-mesa-dev
+
 if [ ! -e minorGems ]
 then
-	git clone https://github.com/jasonrohrer/minorGems.git	
+        git clone https://github.com/jasonrohrer/minorGems.git
 fi
 
 if [ ! -e OneLife ]
 then
-	git clone https://github.com/jasonrohrer/OneLife.git
+        git clone https://github.com/jasonrohrer/OneLife.git
 fi
 
 if [ ! -e OneLifeData7 ]
 then
-	git clone https://github.com/jasonrohrer/OneLifeData7.git	
+        git clone https://github.com/jasonrohrer/OneLifeData7.git
 fi
 
 
@@ -59,6 +61,13 @@ ln -s ../../OneLifeData7/contentSettings .
 
 cd ../server
 ./configure 1
+
+
+awk 'NR==69{print "int codeVer = 409;"}1' server.cpp > server2.cpp
+rm  server.cpp
+mv  server2.cpp server.cpp
+
+
 make
 
 
@@ -67,10 +76,12 @@ ln -s ../../OneLifeData7/objects .
 ln -s ../../OneLifeData7/transitions .
 ln -s ../../OneLifeData7/tutorialMaps .
 ln -s ../../OneLifeData7/dataVersionNumber.txt .
-
+ln -s ../../OneLifeData7/contentSettings .
 
 git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//' > serverCodeVersionNumber.txt
 
 
 echo 0 > settings/requireTicketServerCheck.ini
 echo 1 > settings/forceEveLocation.ini
+
+./OneLifeServer
