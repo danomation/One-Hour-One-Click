@@ -11,7 +11,7 @@ $docker = Get-Service -Name com.docker.service  -ErrorAction SilentlyContinue
 if($docker -eq $null){
     echo "Downloading and installing Docker"
     echo "This may take a while...."
-    Invoke-WebRequest -OutFile "Docker Desktop Installer.exe" -Uri https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
+    curl "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe" -o "Docker Desktop Installer.exe"
     Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList 'install', '--quiet --accept-license'
 }
 else{
