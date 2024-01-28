@@ -28,7 +28,8 @@ $container = docker ps -a -q -f name=ohoc
 if($container.Length -GE 1){
     echo "Container already exists.... restarting"
     docker container restart ohoc
-    docker exec -it ohoc /bin/bash -c "cd /home/ohol/OneLife/server/ && ./OneLifeServer; exec bash"
+    docker exec -d ohoc /bin/bash -c "cd /home/ohol/OneLife/server/ && ./OneLifeServer; exec bash"
+    echo "Server is running."
 }
 else{
     docker run -p 8005:8005 -itd --name=ohoc --tty ubuntu:22.04 /bin/bash
