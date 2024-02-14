@@ -80,6 +80,6 @@ git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/
 
 
 echo 0 > settings/requireTicketServerCheck.ini
-echo 1 > settings/forceEveLocation.ini
+echo 0 > settings/forceEveLocation.ini
 
 ./OneLifeServer
