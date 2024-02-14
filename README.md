@@ -22,9 +22,8 @@ cd /home/ohol/ && sudo rm pullAndBuildtestSystem.sh && wget https://raw.githubus
 
 
 # Known issues:    
-Windows:  
-ohol.ps1 powershell script:  
-* Docker not forwarding ports properly... I'm working to resolve it.  
+Windows (ohol.ps1):  
+* Docker not forwarding ports properly.  
 
-Linux:  
+Linux (pullAndBuildtestSystem.sh):  
 None
