@@ -16,9 +16,12 @@ line="@reboot cd /home/ohol/OneLife/server/ && ./OneLifeServer"
 
 
 # Update to latest:
-```cd /home/ohol/ && sudo rm pullAndBuildtestSystem.sh && wget https://raw.githubusercontent.com/danomation/onehouroneclick/main/pullAndBuildTestSystem.sh && sudo bash pullAndBuildTestSystem.sh```
+```
+cd /home/ohol/ && sudo rm pullAndBuildtestSystem.sh && wget https://raw.githubusercontent.com/danomation/onehouroneclick/main/pullAndBuildTestSystem.sh && sudo bash pullAndBuildTestSystem.sh
+```
 
 
 # Known issues:    
-powershell script:  
+Windows:  
+ohol.ps1 powershell script:  
 1. ```Docker not forwarding ports properly... I'm working to resolve it.```
