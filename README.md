@@ -14,3 +14,7 @@ or
 
 # Update to latest:
 ```sudo rm pullAndBuildtestSystem.sh && wget https://raw.githubusercontent.com/danomation/onehouroneclick/main/pullAndBuildTestSystem.sh && sudo bash pullAndBuildTestSystem.sh```
+
+
+# Known issues:    
+```1. Docker not forwarding ports properly... For some reason Docker Desktop has been creating a port exhaustion issue. I'm working to resolve it.```
