@@ -1,7 +1,4 @@
 cd ~/Desktop
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-$ProgressPreference = 'SilentlyContinue'
-curl "https://raw.githubusercontent.com/danomation/onehouroneclick/main/ohoc.ps1" -o "ohoc.ps1" 
 echo "Installing pre-requisites for OHOL"
 if(Test-Path 'c:\windows\system32\wsl.exe'){
     echo "WSL already installed.... continuing...."
@@ -9,6 +6,8 @@ if(Test-Path 'c:\windows\system32\wsl.exe'){
 else {
     echo "installing WSL...."
     dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    Read-Host -Prompt "Close and re-open script."
+    exit
 }
 $docker = Get-Service -Name com.docker.service  -ErrorAction SilentlyContinue
 if($docker -eq $null){
@@ -17,6 +16,8 @@ if($docker -eq $null){
     $ProgressPreference = 'SilentlyContinue'
     curl "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe" -o "Docker Desktop Installer.exe"
     Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList 'install', '--quiet --accept-license'
+    Read-Host -Prompt "Close and re-open script."
+    exit
 }
 else{
     echo "Docker already installed.... continuing...."
