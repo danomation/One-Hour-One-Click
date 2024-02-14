@@ -24,7 +24,6 @@ else{
 }
 echo "Start the Docker Engine in the Docker Desktop app before pressing ENTER to continue."
 Read-Host -Prompt "<enter to continue>"
-$container = 0
 $container = docker ps -a -q -f name=ohoc
 if($container.Length -GE 1){
     echo "Container already exists.... restarting"
