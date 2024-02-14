@@ -17,4 +17,5 @@ or
 
 
 # Known issues:    
-```powershell script: 1. Docker not forwarding ports properly... For some reason Docker Desktop has been creating a port exhaustion issue. I'm working to resolve it.```
+powershell script:  
+```1. Docker not forwarding ports properly... For some reason Docker Desktop has been creating a port exhaustion issue. I'm working to resolve it.```
