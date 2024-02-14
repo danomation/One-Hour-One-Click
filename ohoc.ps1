@@ -1,4 +1,6 @@
 cd ~/Desktop
+$ProgressPreference = 'SilentlyContinue'
+curl "https://raw.githubusercontent.com/danomation/onehouroneclick/main/ohoc.ps1" -o "ohoc.ps1"
 echo "Installing pre-requisites for OHOL"
 if(Test-Path 'c:\windows\system32\wsl.exe'){
     echo "WSL already installed.... continuing...."
