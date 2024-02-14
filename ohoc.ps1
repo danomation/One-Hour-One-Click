@@ -6,7 +6,7 @@ if(Test-Path 'c:\windows\system32\wsl.exe'){
 else {
     echo "installing WSL...."
     dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-    Read-Host -Prompt "Close and re-open script."
+    Read-Host -Prompt "Manually close all powershell windows and re-run the script"
     exit
 }
 $docker = Get-Service -Name com.docker.service  -ErrorAction SilentlyContinue
@@ -16,7 +16,7 @@ if($docker -eq $null){
     $ProgressPreference = 'SilentlyContinue'
     curl "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe" -o "Docker Desktop Installer.exe"
     Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList 'install', '--quiet --accept-license'
-    Read-Host -Prompt "Close and re-open script."
+    Read-Host -Prompt "Manually close all powershell windows and re-run the script"
     exit
 }
 else{
