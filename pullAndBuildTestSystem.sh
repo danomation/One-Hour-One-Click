@@ -63,7 +63,9 @@ cd ../server
 ./configure 1
 
 
+awk '!/int codeVer/' server.cpp > server.cpp.test && mv server.cpp.test server.cpp
 awk 'NR==69{print "int codeVer = 411;"}1' server.cpp > server2.cpp
+
 rm  server.cpp
 mv  server2.cpp server.cpp
 
