@@ -18,4 +18,4 @@ or
 
 # Known issues:    
 powershell script:  
-```1. Docker not forwarding ports properly... I'm working to resolve it.```
+1. ```Docker not forwarding ports properly... I'm working to resolve it.```
