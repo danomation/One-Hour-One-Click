@@ -1,6 +1,6 @@
 #!/bin/sh
 #this shell script is from https://github.com/jasonrohrer/OneLife/blob/master/scripts/pullAndBuildTestSystem.sh. I did not write it! I just fixed the symlink for version 409 and packaged in the requirements.
-sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get install build-essential && sudo apt-get -y install git g++ imagemagick xclip libsdl1.2-dev libglu1-mesa-dev libgl1-mesa-dev make
+sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install build-essential && sudo apt-get -y install git g++ imagemagick xclip libsdl1.2-dev libglu1-mesa-dev libgl1-mesa-dev make
 
 if [ ! -e minorGems ]
 then
