@@ -1,4 +1,5 @@
 cd ~/Desktop
+Set-ExecutionPolicy -Scope CurrentUser Unrestricted
 echo "Installing pre-requisites for OHOL"
 if(Test-Path 'c:\windows\system32\wsl.exe'){
     echo "WSL already installed.... continuing...."
