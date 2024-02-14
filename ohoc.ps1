@@ -1,4 +1,5 @@
 cd ~/Desktop
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 $ProgressPreference = 'SilentlyContinue'
 curl "https://raw.githubusercontent.com/danomation/onehouroneclick/main/ohoc.ps1" -o "ohoc.ps1" 
 echo "Installing pre-requisites for OHOL"
