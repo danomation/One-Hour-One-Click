@@ -24,6 +24,7 @@ cd /home/ohol/ && sudo rm pullAndBuildtestSystem.sh && wget https://raw.githubus
 # Known issues:    
 Windows (ohol.ps1):  
 * Docker not forwarding ports properly.  
+https://jwstanly.com/blog/article/Port+Forwarding+WSL+2+to+Your+LAN/  
 
 Linux (pullAndBuildtestSystem.sh):  
 * None
